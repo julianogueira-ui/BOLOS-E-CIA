@@ -5,7 +5,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f5efe6, #f5efe6);
+    background: #f5efe6; 
     font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
     display: flex;
@@ -67,6 +67,9 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+    background: #5c3d2e;
+    transform: translateY(-2px);
+}
     background: #c02a5a;
     transform: translateY(-2px);
 }
