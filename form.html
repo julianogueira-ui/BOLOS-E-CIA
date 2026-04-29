@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Bolo</title>
     <link rel="stylesheet" href="form.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="formulario">
         <h2>Cadastrar Bolo</h2>
-
-        <form action="/action_page.php" method="POST">
+            <form id="meuformulario">
             <label for="bolo">Nome do Bolo</label><br>
             <input type="text" id="bolo" name="bolo" placeholder="Ex: Chocolate com Morango" required><br><br>
-
             <label for="cobertura">Cobertura</label><br>
             <input type="text" id="cobertura" name="cobertura" placeholder="Ex: Ganache de chocolate, Chantilly" required><br><br>
-
+            <label for="ingredientebolo">Ingredientes do Bolo</label><br>
+            <input type="text" id="ingredientebolo" name="ingredientebolo" placeholder="Ex: Farinha, Ovo, etc" required><br><br>
+            <label for="preparobolo">Mode de Preparo do Bolo</label><br>
+            <input type="text" id="preparobolo" name="preparobolo" placeholder="Ex: Passo 1, Passo 2, etc" required><br><br>
+            <label for="ingredientecobertura">Ingredientes da Cobertura</label><br>
+            <input type="text" id="ingredientecobertura" name="ingredientecobertura" placeholder="Ex: Chocolate, Manteiga, etc" required><br><br>
+            <label for="preparocobertura">Mode de Preparo da Cobertura</label><br>
+            <input type="text" id="preparocobertura" name="preparocobertura" placeholder="Ex: Passo 1, Passo 2, etc" required><br><br>
+            <label for="foto">Foto do Bolo</label><br>
+            <input type="url" id="foto" name="foto" placeholder="URL" required><br><br>
             <input type="submit" value="Cadastrar Bolo">
-        </form> 
+        </form>
     </div>
+
+
 </body>
 </html>
