@@ -70,6 +70,19 @@ input[type="submit"]:hover {
     background: #5c3d2e;
     transform: translateY(-2px);
 }
-    background: #c02a5a;
-    transform: translateY(-2px);
+
+input[type="url"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #967b6e;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+input[type="url"]:focus {
+    outline: none;
+    border-color: #775b4d;
+    box-shadow: 0 0 8px rgba(212, 56, 108, 0.2);
 }
