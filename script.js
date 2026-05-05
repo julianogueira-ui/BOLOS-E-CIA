@@ -1,18 +1,46 @@
-const formulario = document.getElementById('meuformulario');   
-  formulario.addEventListener('submit', 
+const formulario = document.getElementById('meuformulario'); 
+const listaBolos = document.getElementById('lista-bolos');
+
+let bolos = [];
+
+  formulario.addEventListener('submit'), 
     function(evento){
   evento.preventDefault();
-  const novo = {
+  const novoBolo = {
     bolo: document.getElementById('bolo').value,
     cobertura: document.getElementById('cobertura').value,
+    ingredientebolo: document.getElementById('ingredientebolo').value,
+    preparobolo: document.getElementById('preparobolo').value,
+    ingredientecobertura: document.getElementById('ingredientecobertura').value,
+    preparocobertura: document.getElementById('preparocobertura').value,
+    foto: document.getElementById('foto').value,
    };
-   const novoCard =`
-      <div class = "bolo">
-       <h3 id="bolo">${novo.bolo}</h3>
-       <p>
-      </div>
+if (!novoBolo.bolo || !novoBolo.foto) {
+        alert("Nome do bolo e foto são obrigatórios!");
+        return;
+    }
 
-        
-   `
-   console.log(novoCard;)
-  });
+    bolos.push(novoBolo);
+   
+    criarCard(novoBolo);
+
+    formulario.reset();
+
+    console.log("Bolo cadastrado:", novoBolo);
+};
+
+function criarCard(bolo) {
+    const cardHTML = `
+        <div class="bolo">
+            <img src="${bolo.foto}" alt="${bolo.bolo}" onerror="this.src='https://via.placeholder.com/300x200?text=Sem+Foto'">
+            <h3>${bolo.bolo}</h3>
+            <p><strong>Cobertura:</strong> ${bolo.cobertura}</p>
+            <p><strong>Ingredientes do Bolo:</strong> ${bolo.ingredientebolo}</p>
+            <p><strong>Modo de Preparo do Bolo:</strong> ${bolo.preparobolo}</p>
+            <p><strong>Ingredientes da Cobertura:</strong> ${bolo.ingredientecobertura}</p>
+            <p><strong>Modo de Preparo da Cobertura:</strong> ${bolo.preparocobertura}</p>
+        </div>
+    `;
+
+    listaBolos.innerHTML += cardHTML;
+}
