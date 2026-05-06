@@ -1,12 +1,8 @@
 const formulario = document.getElementById('meuformulario'); 
-const listaBolos = document.getElementById('lista-bolos');
 
-let bolos = [];
-
-  formulario.addEventListener('submit'), 
-    function(evento){
-  evento.preventDefault();
-  const novoBolo = {
+  formulario.addEventListener('submit', function (evento){
+    evento.preventDefault();
+    const bolo = {
     bolo: document.getElementById('bolo').value,
     cobertura: document.getElementById('cobertura').value,
     ingredientebolo: document.getElementById('ingredientebolo').value,
@@ -14,22 +10,8 @@ let bolos = [];
     ingredientecobertura: document.getElementById('ingredientecobertura').value,
     preparocobertura: document.getElementById('preparocobertura').value,
     foto: document.getElementById('foto').value,
-   };
-if (!novoBolo.bolo || !novoBolo.foto) {
-        alert("Nome do bolo e foto são obrigatórios!");
-        return;
-    }
+  };
 
-    bolos.push(novoBolo);
-   
-    criarCard(novoBolo);
-
-    formulario.reset();
-
-    console.log("Bolo cadastrado:", novoBolo);
-};
-
-function criarCard(bolo) {
     const cardHTML = `
         <div class="bolo">
             <img src="${bolo.foto}" alt="${bolo.bolo}" onerror="this.src='https://via.placeholder.com/300x200?text=Sem+Foto'">
@@ -41,6 +23,7 @@ function criarCard(bolo) {
             <p><strong>Modo de Preparo da Cobertura:</strong> ${bolo.preparocobertura}</p>
         </div>
     `;
+    colecao.innerHTML+=cardHTML;
+    formulario.reset()
 
-    listaBolos.innerHTML += cardHTML;
-}
+});
