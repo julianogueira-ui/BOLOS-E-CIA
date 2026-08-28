@@ -1,42 +1,51 @@
+const colecao = document.getElementById('colecao'); // Certifique-se que existe uma div com id="colecao" no HTML
+
+let galeria = [];
+
 const conteudoDaGaveta = localStorage.getItem("meusBolos");
 
-let galeria;
-
-if(conteudoDaGaveta){
-   galeria = JSON.parse(conteudoDaGaveta);
+if (conteudoDaGaveta) {
+    galeria = JSON.parse(conteudoDaGaveta);
 }
 else{
   galeria = [];
 }
 
-const formulario = document.getElementById('meuformulario'); 
 
-  formulario.addEventListener('submit', function (evento){
+
+// Renderiza a galeria ao carregar a página
+renderizarGaleria();
+
+// ==================== FORMULÁRIO ====================
+
+const formulario = document.getElementById('meuformulario');
+
+formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
-    const bolo = {
-    bolo: document.getElementById('bolo').value,
-    cobertura: document.getElementById('cobertura').value,
-    ingredientebolo: document.getElementById('ingredientebolo').value,
-    preparobolo: document.getElementById('preparobolo').value,
-    ingredientecobertura: document.getElementById('ingredientecobertura').value,
-    preparocobertura: document.getElementById('preparocobertura').value,
-    foto: document.getElementById('foto').value,
-  };
 
-    const cardHTML = `
-        <div class="bolo">
-            <img src="${bolo.foto}" alt="${bolo.bolo}" onerror="this.src='https://via.placeholder.com/300x200?text=Sem+Foto'">
-            <h3>${bolo.bolo}</h3>
-            <p><strong>Cobertura:</strong> ${bolo.cobertura}</p>
-            <p><strong>Ingredientes do Bolo:</strong> ${bolo.ingredientebolo}</p>
-            <p><strong>Modo de Preparo do Bolo:</strong> ${bolo.preparobolo}</p>
-            <p><strong>Ingredientes da Cobertura:</strong> ${bolo.ingredientecobertura}</p>
-            <p><strong>Modo de Preparo da Cobertura:</strong> ${bolo.preparocobertura}</p>
-        </div>
-    `;
+    // Cria o novo objeto
+    const novoBolo = {
+        bolo: document.getElementById('bolo').value,
+        cobertura: document.getElementById('cobertura').value,
+        ingredientebolo: document.getElementById('ingredientebolo').value,
+        preparobolo: document.getElementById('preparobolo').value,
+        ingredientecobertura: document.getElementById('ingredientecobertura').value,
+        preparocobertura: document.getElementById('preparocobertura').value,
+        foto: document.getElementById('foto').value,
+    };
 
-    colecao.innerHTML+=cardHTML;
+    // Adiciona o novo bolo ao array
+    galeria.push(novoBolo);
+
+    // Salva no LocalStorage
     localStorage.setItem('meusBolos', JSON.stringify(galeria));
+
+    // Renderiza novamente a galeria (incluindo o novo item)
+    renderizarGaleria();
+
+    // Limpa o formulário
     formulario.reset();
 
+    // Opcional: feedback para o usuário
+    alert('Bolo adicionado com sucesso!');
 });
