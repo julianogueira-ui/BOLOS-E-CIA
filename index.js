@@ -40,4 +40,3 @@ app.post('/api/lista', (dados, resposta) => {
 app.listen(3000, () => {
     console.log("escutando na porta 3000");
 });
-
