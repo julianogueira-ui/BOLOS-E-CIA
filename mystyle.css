@@ -149,3 +149,123 @@ footer {
     text-align: center;
     padding: 30px;
     }
+
+
+/* Catálogo de bolos */
+
+.catalogo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.catalogo h2,
+.destaque-receita h2 {
+    color: #5c3d2e;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.todosCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.bolo {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.bolo:hover {
+    transform: translateY(-5px);
+}
+
+.bolo img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.bolo-info {
+    padding: 20px;
+}
+
+.bolo-info h3 {
+    color: #5c3d2e;
+    margin-bottom: 10px;
+}
+
+.bolo-info p {
+    margin-bottom: 20px;
+}
+
+.botao {
+    display: inline-block;
+    background: #5c3d2e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.botao:hover {
+    background: #3e2a1f;
+}
+
+/* Receita em destaque */
+
+.destaque-receita {
+    margin-top: 50px;
+}
+
+.bolo-destaque {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bolo-destaque img {
+    width: 45%;
+    min-height: 250px;
+    object-fit: cover;
+}
+
+.destaque-info {
+    padding: 25px;
+}
+
+.destaque-info h3 {
+    color: #5c3d2e;
+    margin-bottom: 10px;
+}
+
+.destaque-info p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .bolo-destaque {
+        flex-direction: column;
+    }
+
+    .bolo-destaque img {
+        width: 100%;
+        min-height: 200px;
+    }
+}
