@@ -5,32 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Bolo</title>
     <link rel="stylesheet" href="form.css">
-   <script src="script4.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="scriptForm.js" defer></script>
 </head>
 <body>
+
     <div class="formulario">
         <h2>Cadastrar Bolo</h2>
-            <form id="meuformulario">
-            <label for="bolo">Nome do Bolo</label><br>
-            <input type="text" id="bolo" name="bolo" placeholder="Ex: Chocolate com Morango" required><br><br>
-            <label for="cobertura">Cobertura</label><br>
-            <input type="text" id="cobertura" name="cobertura" placeholder="Ex: Ganache de chocolate, Chantilly" required><br><br>
-            <label for="ingredientebolo">Ingredientes do Bolo</label><br>
-            <input type="text" id="ingredientebolo" name="ingredientebolo" placeholder="Ex: Farinha, Ovo, etc" required><br><br>
-            <label for="preparobolo">Mode de Preparo do Bolo</label><br>
-            <input type="text" id="preparobolo" name="preparobolo" placeholder="Ex: Passo 1, Passo 2, etc" required><br><br>
-            <label for="ingredientecobertura">Ingredientes da Cobertura</label><br>
-            <input type="text" id="ingredientecobertura" name="ingredientecobertura" placeholder="Ex: Chocolate, Manteiga, etc" required><br><br>
-            <label for="preparocobertura">Mode de Preparo da Cobertura</label><br>
-            <input type="text" id="preparocobertura" name="preparocobertura" placeholder="Ex: Passo 1, Passo 2, etc" required><br><br>
-            <label for="foto">Foto do Bolo</label><br>
-            <input type="url" id="foto" name="foto" placeholder="URL" required><br><br>
+        <form id="meuformulario">
+            <div class="campo">
+                <label for="bolo">Nome do Bolo</label>
+                <input type="text" id="bolo" name="bolo" placeholder="Ex: Chocolate com Morango" required>
+            </div>
+
+            <div class="campo">
+                <label for="cobertura">Cobertura</label>
+                <input type="text" id="cobertura" name="cobertura" placeholder="Ex: Ganache de chocolate, Chantilly" required>
+            </div>
+
+            <div class="campo">
+                <label for="ingredientebolo">Ingredientes do Bolo</label>
+                <textarea id="ingredientebolo" name="ingredientebolo" placeholder="Ex: Farinha, Ovo, Açúcar..." rows="3" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="preparobolo">Modo de Preparo do Bolo</label>
+                <textarea id="preparobolo" name="preparobolo" placeholder="Ex: Passo 1: Bater os ovos..." rows="3" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="ingredientecobertura">Ingredientes da Cobertura</label>
+                <textarea id="ingredientecobertura" name="ingredientecobertura" placeholder="Ex: Chocolate, Manteiga..." rows="3" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="preparocobertura">Modo de Preparo da Cobertura</label>
+                <textarea id="preparocobertura" name="preparocobertura" placeholder="Ex: Passo 1: Derreter o chocolate..." rows="3" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="foto">Foto do Bolo (URL)</label>
+                <input type="url" id="foto" name="foto" placeholder="https://exemplo.com/imagem.jpg" required>
+            </div>
+
             <input type="submit" value="Cadastrar Bolo">
         </form>
     </div>
-    <h2>Bolos Cadastrados</h2>
-    <div id="lista-bolos" class="bolos-container"></div>
-    <div id="colecao"></div>
 </body>
 </html>
