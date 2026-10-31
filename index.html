@@ -5,15 +5,23 @@
     <title>Bolo de Chocolate | Bolos e Cia</title>
     <link rel="stylesheet" href="mystyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="script4.js" defer></script>
- <script src="script.js" defer></script>
+    <script src="scriptIndex.js" defer></script>
+    
+    <script>
+        fetch('/api/lista')
+            .then ((data)=>data.json())
+            .then((json)=>console.log(json))
+            .catch((err)=>console.log(err));
+
+    </script>
+
 </head>
 <body>
     <header class="topo">
         <h1>Bolos e Cia</h1>
         <nav>
-            <a href="#">Início</a>
-            <a href="#">Receitas</a>
+            <a href="index.html">Início</a>
+            <a href="form.html">Cadastrar Bolos</a>
             <a href="#">Contato</a>
         </nav>
     </header>
@@ -80,10 +88,12 @@
                 </div>
             </div>
         </section>
+        <section class="todosCards"></section>
     </main>
     <footer>
         <p>© 2026 Bolos e Cia</p>
         <p>Feito por Heloisa Sant' Ana Ferreira & Júlia Nogueira Ferreira</p>
     </footer>
 </body>
+</html>
 </html>
