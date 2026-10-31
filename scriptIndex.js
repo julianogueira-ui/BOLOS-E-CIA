@@ -6,19 +6,38 @@ fetch('/api/lista')
     .then((dados)=> {
         container.innerHTML = '';
 
-        dados.forEach(Bolo => {
-            container.innerHTML += `
-            <div class="bolo">
-                <img src="${Bolo.foto}" alt="${Bolo.bolo}" 
-                     onerror="this.src='https://via.placeholder.com/300x200?text=Sem+Foto'">
-                <h3>${Bolo.bolo}</h3>
-                <p><strong>Cobertura:</strong> ${Bolo.cobertura}</p>
-                <p><strong>Ingredientes do Bolo:</strong> ${Bolo.ingredientebolo}</p>
-                <p><strong>Modo de Preparo do Bolo:</strong> ${Bolo.preparobolo}</p>
-                <p><strong>Ingredientes da Cobertura:</strong> ${Bolo.ingredientecobertura}</p>
-                <p><strong>Modo de Preparo da Cobertura:</strong> ${Bolo.preparocobertura}</p>
-            </div>
+        dados.forEach(bolo => {
+            const card = document.createElement('article');
+            card.classList.add('bolo');
+
+            const imagem = bolo.foto || 
+                'https://placehold.co/400x250?text=Bolo';
+
+            card.innerHTML = `
+                <img src="${imagem}" alt="${bolo.foto}"
+                     onerror="this.src='https://placehold.co/400x250?text=Bolo'">
+
+                <div class="bolo-info">
+                    <h3>${bolo.bolo}</h3>
+                    <p><strong>Cobertura:</strong> ${bolo.cobertura}</p>
+
+                    <div class="detalhes-completo" style="margin-top: 15px; text-align: left;">
+                        <h4 style="color: #5c3d2e; margin-top: 10px;">Ingredientes do Bolo:</h4>
+                        <p style="white-space: pre-line;">${bolo.ingredientebolo}</p>
+
+                        <h4 style="color: #5c3d2e; margin-top: 10px;">Modo de Preparo do Bolo:</h4>
+                        <p style="white-space: pre-line;">${bolo.preparobolo}</p>
+
+                        <h4 style="color: #5c3d2e; margin-top: 10px;">Ingredientes da Cobertura:</h4>
+                        <p style="white-space: pre-line;">${bolo.ingredientecobertura}</p>
+
+                        <h4 style="color: #5c3d2e; margin-top: 10px;">Modo de Preparo da Cobertura:</h4>
+                        <p style="white-space: pre-line;">${bolo.preparocobertura}</p>
+                    </div>
+                </div>
             `;
+
+            container.appendChild(card);
         });
     })
     .catch((erro)=>console.error("Erro ao buscar os bolos.", erro));
