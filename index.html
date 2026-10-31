@@ -2,98 +2,60 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Bolo de Chocolate | Bolos e Cia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Bolos e Cia</title>
+
     <link rel="stylesheet" href="mystyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <script src="scriptIndex.js" defer></script>
-    
-    <script>
-        fetch('/api/lista')
-            .then ((data)=>data.json())
-            .then((json)=>console.log(json))
-            .catch((err)=>console.log(err));
-
-    </script>
-
 </head>
 <body>
+
     <header class="topo">
         <h1>Bolos e Cia</h1>
         <nav>
             <a href="index.html">Início</a>
             <a href="form.html">Cadastrar Bolos</a>
-            <a href="#">Contato</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
+
     <section class="banner">
-        <h2>Bolos Diversos</h2>
+        <h2>Nosso Catálogo de Bolos</h2>
     </section>
+
     <main class="container">
-        <section class="receita">
-            <img src= "https://receitasdepanela.com.br/wp-content/uploads/2025/12/BOLO-DE-CHOCOLATE-FOFINHO.jpg" alt="Bolo de chocolate">
-            <div class="info-topo">
-                <span> 55 min</span>
-                <span> 15 porções</span>
-                <span> Fácil</span>
-            </div>
-            <h2>Bolo de Chocolate Fofinho</h2>
-            <p class="descricao">
-                Sempre que você tenta fazer um bolo de chocolate ele fica solado, também conhecido como embatumado? Nunca consegue deixar o bolo levinho? Confira a receita de bolo de chocolate fofinho e delicioso!
-            </p>
-            <div class="ingredientes">
-                <h3> Ingredientes</h3>
-                <div class="grid">
-                    <div>2 xícaras (chá) de farinha de trigo</div>
-                    <div>1 xícara (chá) de leite integral</div>
-                    <div>1 e 1/2 xícara (chá) de açúcar</div>
-                    <div>2 colheres (sopa) bem cheias de manteiga</div>
-                    <div>4 colheres (sopa) de chocolate em pó</div>
-                    <div>2 colheres (chá) de fermento</div>
-                    <div>4 ovos</div>
-                </div>
-            </div>
-            <div class="preparo">
-                <h3> Modo de Preparo</h3>
-                <ol>
-                    <li>Separe as gemas das claras e reserve-as.</li>
-                    <li>Bata as gemas junto com a manteiga e o açúcar até dobrar de tamanho e formar um creme fofinho.</li>
-                    <li>Acrescente o leite, a farinha de trigo e o chocolate em pó peneirados.</li>
-                    <li>Bata por mais alguns minutos, até que tudo esteja bem homogêneo.</li>
-                    <li>Adicione o fermento em pó e bata rapidamente apenas para incorporá-lo. Reserve.</li>
-                    <li>Em outro recipiente bem limpo, bata as claras até o ponto de neve e desligue a batedeira.</li>
-                    <li>Com ajuda de uma espátula, acrescente as claras em neve aos poucos à massa anterior até obter uma massa homogênea.</li>
-                    <li>Despeje-a em uma forma untada e enfarinhada e leve para assar em forno preaquecido a 180º C por cerca de 35 minutos.</li>
-                    <li>Depois de assado, espere esfriar para desenformar.</li>
-                </ol>
-            </div>
-            <div class="dica">
-                <h3> Dica das Meninas</h3>
-                <p>Para o bolo de chocolate ficar ainda mais gostoso, experimente inovar nas coberturas. Quem disse que ela precisa ser de chocolate? Você pode fazer um bolo vulcão com cobertura de leite em pó ou preparar diferentes tipos de brigadeiro. Use a imaginação!</p>
+        <section class="catalogo">
+            <h2>Encontre seu bolo favorito</h2>
+            <p class="subtitulo">Delícias feitas para adoçar o seu dia!</p>
+
+            <div class="todosCards">
+                <p class="carregando">Carregando bolos...</p>
             </div>
         </section>
-        <section class="relacionadas">
-            <h3>Outras receitas</h3>
-            <div class="cards">
-                <div class="mini-card">
-                    <img src="https://recipesblob.oetker.com.br/assets/11ed1b54a18b427ea8e7f7d141f0a34d/1272x764/bolo_cenoura_horizontal.jpg">
-                    <p>Bolo de Cenoura</p>
-                </div>
-                <div class="mini-card">
-                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/24d767ce6c156eb07b1fc26c266211f5_XL.jpg">
-                    <p>Bolo de Morango</p>
-                </div>
-                <div class="mini-card">
-                    <img src="https://revistaanamaria.com.br/wp-content/uploads/2022/11/Bolo-de-limao.jpg">
-                    <p>Bolo de Limão</p>
+
+        <section class="destaque-receita">
+            <h2>Receita em destaque</h2>
+
+            <div class="bolo-destaque">
+                <img
+                    src="https://receitasdepanela.com.br/wp-content/uploads/2025/12/BOLO-DE-CHOCOLATE-FOFINHO.jpg"
+                    alt="Bolo de chocolate fofinho">
+
+                <div class="destaque-info">
+                    <h3>Bolo de Chocolate Fofinho</h3>
+                    <p>Aprenda a preparar um bolo de chocolate leve, macio e delicioso.</p>
+                    <a href="receita.html" class="botao">Ver receita</a>
                 </div>
             </div>
         </section>
-        <section class="todosCards"></section>
     </main>
-    <footer>
+
+    <footer id="contato">
         <p>© 2026 Bolos e Cia</p>
         <p>Feito por Heloisa Sant' Ana Ferreira & Júlia Nogueira Ferreira</p>
     </footer>
+
 </body>
-</html>
 </html>
