@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="scriptForm.js" defer></script>
+</head>
+<body>
+
+    <div class="formulario">
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="form.html">Bolos</a>
+            <a href="usuario.html">Usuários</a>
+            <a href="categoria.html">Categorias</a>
+            <a href="cobertura.html">Coberturas</a>
+            <a href="ingrediente.html">Ingredientes</a>
+        </nav>
+
+        <h2>Cadastrar Usuário</h2>
+        <form id="meuformulario">
+            <div class="campo">
+                <label for="Nome">Nome</label>
+                <input type="text" id="Nome" name="Nome" placeholder="Ex: Maria Silva" maxlength="100" required>
+            </div>
+
+            <div class="campo">
+                <label for="Email">E-mail</label>
+                <input type="email" id="Email" name="Email" placeholder="Ex: maria@email.com" maxlength="255" required>
+            </div>
+
+            <input type="submit" value="Cadastrar Usuário">
+        </form>
+    </div>
+
+    <section class="secao-bolos">
+        <h2>Usuários cadastrados</h2>
+        <div class="bolos-container" id="lista" data-rota="/api/usuarios" data-id="idUsuario"></div>
+    </section>
+</body>
+</html>

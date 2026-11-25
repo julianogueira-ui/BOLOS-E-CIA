@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Cobertura</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="scriptForm.js" defer></script>
+</head>
+<body>
+
+    <div class="formulario">
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="form.html">Bolos</a>
+            <a href="usuario.html">Usuários</a>
+            <a href="categoria.html">Categorias</a>
+            <a href="cobertura.html">Coberturas</a>
+            <a href="ingrediente.html">Ingredientes</a>
+        </nav>
+
+        <h2>Cadastrar Cobertura</h2>
+        <form id="meuformulario">
+            <div class="campo">
+                <label for="NomeCobertura">Nome da Cobertura</label>
+                <input type="text" id="NomeCobertura" name="NomeCobertura" placeholder="Ex: Ganache de chocolate" maxlength="100" required>
+            </div>
+
+            <div class="campo">
+                <label for="PreparoCobertura">Modo de Preparo da Cobertura</label>
+                <textarea id="PreparoCobertura" name="PreparoCobertura" placeholder="Ex: Derreta o chocolate..." rows="3" required></textarea>
+            </div>
+
+            <input type="submit" value="Cadastrar Cobertura">
+        </form>
+    </div>
+
+    <section class="secao-bolos">
+        <h2>Coberturas cadastradas</h2>
+        <div class="bolos-container" id="lista" data-rota="/api/coberturas" data-id="idCobertura"
+             data-colunas="NomeCobertura,PreparoCobertura,Ingredientes"></div>
+    </section>
+</body>
+</html>
