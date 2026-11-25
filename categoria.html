@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Categoria</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="scriptForm.js" defer></script>
+</head>
+<body>
+
+    <div class="formulario">
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="form.html">Bolos</a>
+            <a href="usuario.html">Usuários</a>
+            <a href="categoria.html">Categorias</a>
+            <a href="cobertura.html">Coberturas</a>
+            <a href="ingrediente.html">Ingredientes</a>
+        </nav>
+
+        <h2>Cadastrar Categoria</h2>
+        <form id="meuformulario">
+            <div class="campo">
+                <label for="NomeCategoria">Nome da Categoria</label>
+                <input type="text" id="NomeCategoria" name="NomeCategoria" placeholder="Ex: Chocolate" maxlength="100" required>
+            </div>
+
+            <input type="submit" value="Cadastrar Categoria">
+        </form>
+    </div>
+
+    <section class="secao-bolos">
+        <h2>Categorias cadastradas</h2>
+        <div class="bolos-container" id="lista" data-rota="/api/categorias" data-id="idCategoria"></div>
+    </section>
+</body>
+</html>
