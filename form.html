@@ -10,45 +10,87 @@
 <body>
 
     <div class="formulario">
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="form.html">Bolos</a>
+            <a href="usuario.html">Usuários</a>
+            <a href="categoria.html">Categorias</a>
+            <a href="cobertura.html">Coberturas</a>
+            <a href="ingrediente.html">Ingredientes</a>
+        </nav>
+
         <h2>Cadastrar Bolo</h2>
         <form id="meuformulario">
             <div class="campo">
-                <label for="bolo">Nome do Bolo</label>
-                <input type="text" id="bolo" name="bolo" placeholder="Ex: Chocolate com Morango" required>
+                <label for="NomeBolo">Nome do Bolo</label>
+                <input type="text" id="NomeBolo" name="NomeBolo" placeholder="Ex: Chocolate com Morango" maxlength="100" required>
             </div>
 
             <div class="campo">
-                <label for="cobertura">Cobertura</label>
-                <input type="text" id="cobertura" name="cobertura" placeholder="Ex: Ganache de chocolate, Chantilly" required>
+                <label for="idCategoria">Categoria</label>
+                <select id="idCategoria" name="idCategoria" data-rota="/api/categorias" data-valor="idCategoria" data-texto="NomeCategoria" required>
+                    <option value="">Selecione...</option>
+                </select>
             </div>
 
             <div class="campo">
-                <label for="ingredientebolo">Ingredientes do Bolo</label>
-                <textarea id="ingredientebolo" name="ingredientebolo" placeholder="Ex: Farinha, Ovo, Açúcar..." rows="3" required></textarea>
+                <label for="idCobertura">Cobertura</label>
+                <select id="idCobertura" name="idCobertura" data-rota="/api/coberturas" data-valor="idCobertura" data-texto="NomeCobertura" required>
+                    <option value="">Selecione...</option>
+                </select>
             </div>
 
             <div class="campo">
-                <label for="preparobolo">Modo de Preparo do Bolo</label>
-                <textarea id="preparobolo" name="preparobolo" placeholder="Ex: Passo 1: Bater os ovos..." rows="3" required></textarea>
+                <label for="idUsuario">Cadastrado por</label>
+                <select id="idUsuario" name="idUsuario" data-rota="/api/usuarios" data-valor="idUsuario" data-texto="Nome" required>
+                    <option value="">Selecione...</option>
+                </select>
             </div>
 
             <div class="campo">
-                <label for="ingredientecobertura">Ingredientes da Cobertura</label>
-                <textarea id="ingredientecobertura" name="ingredientecobertura" placeholder="Ex: Chocolate, Manteiga..." rows="3" required></textarea>
+                <label for="RendimentoPorcao">Rendimento (porções)</label>
+                <input type="number" id="RendimentoPorcao" name="RendimentoPorcao" min="1" placeholder="Ex: 15" required>
             </div>
 
             <div class="campo">
-                <label for="preparocobertura">Modo de Preparo da Cobertura</label>
-                <textarea id="preparocobertura" name="preparocobertura" placeholder="Ex: Passo 1: Derreter o chocolate..." rows="3" required></textarea>
+                <label for="Dificuldade">Dificuldade</label>
+                <select id="Dificuldade" name="Dificuldade" required>
+                    <option value="">Selecione...</option>
+                    <option value="Fácil">Fácil</option>
+                    <option value="Média">Média</option>
+                    <option value="Difícil">Difícil</option>
+                </select>
             </div>
 
             <div class="campo">
-                <label for="foto">Foto do Bolo (URL)</label>
-                <input type="url" id="foto" name="foto" placeholder="https://exemplo.com/imagem.jpg" required>
+                <label for="TempoPreparo">Tempo de Preparo</label>
+                <input type="text" id="TempoPreparo" name="TempoPreparo" placeholder="Ex: 55 min" maxlength="45" required>
+            </div>
+
+            <div class="campo">
+                <label for="Descricao">Descrição</label>
+                <textarea id="Descricao" name="Descricao" placeholder="Ex: Bolo fofinho de chocolate..." rows="3" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="PreparoMassa">Modo de Preparo da Massa</label>
+                <textarea id="PreparoMassa" name="PreparoMassa" placeholder="Ex: Passo 1: Bater os ovos..." rows="3" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="Imagem">Foto do Bolo (URL)</label>
+                <input type="url" id="Imagem" name="Imagem" placeholder="https://exemplo.com/imagem.jpg" maxlength="500" required>
             </div>
 
             <input type="submit" value="Cadastrar Bolo">
         </form>
     </div>
+
+    <section class="secao-bolos">
+        <h2>Bolos cadastrados</h2>
+        <div class="bolos-container" id="lista" data-rota="/api/bolos" data-id="idBolo"
+             data-colunas="NomeBolo,Categoria,Cobertura,Autor,Dificuldade,TempoPreparo"></div>
+    </section>
 </body>
 </html>
+
